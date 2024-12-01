@@ -1,4 +1,4 @@
-const { startVercel } = require("../src");
+import {startVercel} from "../src/index.js";
 
 module.exports = async function handle(req, res) {
   try {
