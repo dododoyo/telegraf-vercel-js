@@ -1,0 +1,29 @@
+{
+  "name": "vercel-deployable-telegram-bot",
+  "version": "1.0.0",
+  "description": "Vercel Deployable Telegram Bot Template",
+  "type": "module",
+  "main": "src/index.js",
+  "author": "Dolphin Mulugeta",
+  "homepage": "https://github.com/dododoyo/telegraf-vercel-js",
+  "dependencies": {
+    "@vercel/node": "^2.10.3",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1",
+    "debug": "^4.3.6",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "dev": "DEBUG=bot* dotenv -- nodemon src/index.js",
+    "start": "DEBUG=bot* dotenv -- node src/index.js",
+    "devWindows": "@powershell -Command $env:DEBUG='bot*';dotenv -- -- nodemon src/index.js",
+    "build": "ncc build src/index.js -o public -m",
+    "prettier": "prettier --write 'src/**/*.ts'",
+    "lint": "tsc --noemit"
+  }
+}
